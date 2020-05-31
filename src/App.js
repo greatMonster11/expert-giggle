@@ -10,7 +10,7 @@ const App = () => {
   const search = async (e) => {
     if (e.key === "Enter") {
       const data = await fetchWeather(query);
-      console.log(data);
+      // console.log(data);
       setWeather(data);
       setQuery("");
     }
@@ -33,7 +33,7 @@ const App = () => {
             {weather.name} <sup>{weather.sys.country}</sup>
           </h1>
           <div className="weather-temp">
-            {<span>{weather.main.temp}</span>} <sup>°C</sup>
+            {<span>{Math.round(weather.main.temp)}</span>} <sup>°C</sup>
           </div>
           <div className="weather-info">
             <img
